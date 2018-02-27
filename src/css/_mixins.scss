@@ -1,0 +1,11 @@
+@mixin border-radius ($values) {
+	-webkit-border-radius: $values; // iOS Safari 3.2, Android 2.1
+	        border-radius: $values;
+}
+
+@mixin linear-gradient ($direction: 'to bottom', $fallback: #ccc, $from: #ccc, $to: #aaa) {
+	$directions: helper-gradient-angle($direction);
+	background-color: $fallback;
+	background-image: -webkit-linear-gradient(unquote(nth($directions, 1)), $from, $to);
+	background-image:         linear-gradient(unquote($direction), $from, $to);
+}
