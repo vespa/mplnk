@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import currentPos  from "./currentPos"
+import fetchedData  from "./fetchedData"
 const reducers = combineReducers({
-	currentPos
+	fetchedData
 })
 export default reducers
