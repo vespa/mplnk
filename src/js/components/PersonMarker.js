@@ -1,6 +1,5 @@
 import { GoogleConfig } from "config/Config"
 import React, {Component} from "react"
-const { compose, withProps, lifecycle, withStateHandlers } = require("recompose");
 const {
   Marker,
   InfoWindow,

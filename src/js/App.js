@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import reducers from './reducers'
 import 'bootstrap';
+import CSS from '../css/main.scss'
 import AppContainer from 'containers/AppContainer'
 
 const wrapper = document.getElementById("root");

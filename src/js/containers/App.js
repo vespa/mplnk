@@ -52,6 +52,7 @@ class App extends Component {
     const obj = {targets, batMobile, villain} ;
     return (
       <div >
+      lalalala
       <GoogleMapComp 
          {...obj}
          location = {{lng: this.state.villainLng, lat: this.state.villainLat}}
