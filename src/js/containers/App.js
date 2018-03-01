@@ -47,7 +47,7 @@ class App extends Component {
   render() {
     const {villain, location, targets} = this.props;
     const {batMobileLat, batMobileLng, vil} = this.state;
-    const batMobile = {batMobileLat, batMobileLng};
+    const batMobile = {lat: batMobileLat, lng: batMobileLng};
     const obj = {targets, batMobile, villain} ;
     return (
       <div >
