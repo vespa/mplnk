@@ -5,10 +5,25 @@ export const fetchedData = (data = {}) => {
   }
 }
 
-export const villainData = ( {name, location} ) => {
+export const fetchedDataBatmobile = (data = {}) => {
   return {
-    type: "FETCHED_DATA_VILAIN",
-    villain : name,
-    location
+    type: "FETCHED_DATA_BATMOBILE",
+    batMobile : data
   }
 }
+
+export const fetchedDataVillainLocation = (data = {}) => {
+  return {
+    type: "FETCHED_DATA_VILLAIN_LOCATION",
+    location : data
+  }
+}
+
+export const updateTargets = (data = {}) => {
+  return {
+    type: "FETCHED_DATA_UPDATE_TARGETS",
+    targets : data
+  }
+}
+
+

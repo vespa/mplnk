@@ -1,17 +1,16 @@
 import App from "containers/App"
-import { fetchedData, villainData } from 'actions/index'
+import { fetchedData, fetchedDataBatmobile } from 'actions/index'
 import { connect } from 'react-redux';
 import { GothamBoundaries } from "config/Config"
 
 const mapStateToProps = (state) => {
   return {
-    //fetchedData: state.fetchedData,
     villain:      state.fetchedData.villain.name,
     location:     state.fetchedData.villain.location,
-    targets:      state.fetchedData.targets
+    targets:      state.fetchedData.targets,
+    batMobile:    state.fetchedData.batMobile
   }
 }
-
 const mapDispatchToProps = dispatch => {
   return {
     randomPos: () =>{
@@ -22,13 +21,15 @@ const mapDispatchToProps = dispatch => {
     },
     fetchData: data => {
       dispatch(fetchedData(data));
+    },
+    setBatmobilePosition: data => {
+      dispatch(fetchedDataBatmobile(data));
     }
   }
 }
-
-const AppContainer = connect(
+const Container = connect(
   mapStateToProps,
   mapDispatchToProps
 )(App)
 
-export default AppContainer;
+export default Container;

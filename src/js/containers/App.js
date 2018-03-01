@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import GetData from 'helpers/GetData'
-import GoogleMapComp from "components/GoogleMapComp"
+import GoogleMapComp from "containers/GoogleMapCompContainer"
 
 let count = 0;
 class App extends Component {
@@ -35,6 +35,7 @@ class App extends Component {
   _setBatmobilePosition(){
     const pos = this.props.randomPos();
     const posVillain = this.props.randomPos();
+    this.props.setBatmobilePosition({lat: pos.lat, lng: pos.lng, })
     this.setState({ batMobileLat: pos.lat, batMobileLng: pos.lng, villainLat: posVillain.lat, villainLng: posVillain.lng} , ()=>{
         this._call();
     });
