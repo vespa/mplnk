@@ -29,7 +29,8 @@
       "^components/(.*)": "<rootDir>/src/js/components/$1",
       "^containers/(.*)": "<rootDir>/src/js/containers/$1",
       "^reducers/(.*)": "<rootDir>/src/js/reducers/$1",
-      "^helpers/(.*)": "<rootDir>/src/js/helpers/$1"
+      "^helpers/(.*)": "<rootDir>/src/js/helpers/$1",
+      "^config/(.*)": "<rootDir>/src/js/config/$1"
     }
   },
   "devDependencies": {
