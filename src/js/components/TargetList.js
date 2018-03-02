@@ -1,30 +1,21 @@
-import React, {Component} from "react"
+import React from "react"
 import PropTypes from 'prop-types'
+import Modal from "components/Modal"
 
 let count=0;
-class TargetList extends Component {
-  constructor() {
-    super();
-    this.state ={
-        showHide: true,
-        buttonLabel: 'open'
-    }
-    this._showHide = this._showHide.bind(this);
-  }
-  _showHide(){
-    this.setState({buttonLabel: (this.props.open)? "close": "open"})
-  }
-  render() {
-    const { targets, open } = this.props;
+const TargetList =({ targets , id }) => {
     return (
-        <div>
-            {open && targets.map(item =>  <div key={count+1+"_"+item.place}>  {item.place} : {item.probability.toFixed(0) +"%"} <hr /></div>)}
-        </div>
+        <Modal id={id} title="PLACES">
+            {targets.map(item =>  <div key={count+1+"_"+item.place}>  
+                <b>{item.place} </b><br/>
+                Risk: {item.probability.toFixed(0) +"%"} <hr />
+            </div>)}
+        </ Modal>
     );
-  }
 }
+
 TargetList.propTypes = {
   targets: PropTypes.array.isRequired,
-  open:    PropTypes.bool.isRequired,
+  id:      PropTypes.string.isRequired,
 }
 export default TargetList;

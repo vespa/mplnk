@@ -8,7 +8,9 @@ const mapStateToProps = (state) => {
     villain:      state.fetchedData.villain.name,
     location:     state.fetchedData.villain.location,
     targets:      state.fetchedData.targets,
-    batMobile:    state.fetchedData.batMobile
+    batMobile:    state.fetchedData.batMobile,
+    modalPlaces: "modalPlaces",
+    modalInstructions: "modalInstructions"
   }
 }
 const mapDispatchToProps = dispatch => {

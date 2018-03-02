@@ -1,5 +1,6 @@
 import { GoogleConfig } from "config/Config"
 import React, {Component} from "react"
+import PropTypes from 'prop-types'
 const {
   Marker,
   InfoWindow,
@@ -32,7 +33,7 @@ class PersonMarker extends Component {
     })
     this.state.update({lat, lng})
   }
-  _updatePlaceInfo(e){
+  _updatePlaceInfo(){
     this.setState({
       latInfo: "",
       lngInfo: ""
@@ -48,7 +49,7 @@ class PersonMarker extends Component {
     if(this.props.update) this.setState({update: this.props.update})
   }
   render() {
-    const {name, isOpen, onToggleOpen, color, icon} = this.props;
+    const {name, color, icon} = this.props;
     return (
     <Marker
         position={{ lat: this.state.lat, lng: this.state.lng}}
@@ -70,5 +71,8 @@ class PersonMarker extends Component {
     );
   }
 }
-
+PersonMarker.propTypes = {
+  name: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+}
 export default PersonMarker;

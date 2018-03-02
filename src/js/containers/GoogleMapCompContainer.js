@@ -8,24 +8,34 @@ const mapStateToProps = (state) => {
   return {
     location:     state.fetchedData.villain.location,
     batMobile:    state.fetchedData.batMobile,
-    targets:      state.fetchedData.targets
+    targets:      state.fetchedData.targets,
+    activeRoute:  state.menu.activeRoute
   }
 }
+const message = "OUT OF GOTHAM"
 const mapDispatchToProps = dispatch => {
   return {
     setBatmobilePosition: data => {
       dispatch(fetchedDataBatmobile(data));
+      return GetData(data).then(res => {
+          dispatch(updateTargets(res.targets));
+          return data;
+      }).catch(err => {
+          alert(message);
+      });
     },
     setVillainPosition: data => {
       dispatch(fetchedDataVillainLocation(data));
-      GetData(data).then(res => {
+      return GetData(data).then(res => {
           dispatch(updateTargets(res.targets));
+          return data;
       }).catch(err => {
-          console.log("OUT OF BOUNDARIES");
+          alert(message);
       });
     }
   }
 }
+
 const Container = connect(
   mapStateToProps,
   mapDispatchToProps

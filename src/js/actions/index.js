@@ -26,4 +26,11 @@ export const updateTargets = (data = {}) => {
   }
 }
 
+export const createDestroyRoute = (open = {}) => {
+  return {
+    type: "MENU_ACTIVE_ROUTE",
+    activeRoute : open
+  }
+}
+
 

@@ -1,4 +1,5 @@
 import React, {Component} from "react"
+import PropTypes from 'prop-types'
 const {
   Marker,
   InfoWindow,
@@ -42,5 +43,9 @@ class GothamMarker extends Component {
     );
   }
 }
-
+GothamMarker.propTypes = {
+  place: PropTypes.string.isRequired,
+  location: PropTypes.object.isRequired,
+  probability: PropTypes.number.isRequired,
+}
 export default GothamMarker;

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import GetData from 'helpers/GetData'
 import GoogleMapComp from "containers/GoogleMapCompContainer"
+import Menu from "containers/Menu"
+import TargetList from 'components/TargetList';
 
 let count = 0;
 class App extends Component {
@@ -46,18 +48,20 @@ class App extends Component {
   }
 
   render() {
-    const {villain, location, targets} = this.props;
-    const {batMobileLat, batMobileLng, vil} = this.state;
+    const {villain, location, targets, activeTargetList, modalPlaces, modalInstructions} = this.props;
+    const {batMobileLat, batMobileLng} = this.state;
     const batMobile = {lat: batMobileLat, lng: batMobileLng};
-    const obj = {targets, batMobile, villain} ;
+    const obj = {targets, batMobile, villain, modalInstructions} ;
+    const rendr = (location.lat !== 0);
     return (
       <div >
-      lalalala
-      <GoogleMapComp 
+      <Menu modalPlaces={modalPlaces} modalInstructions={modalInstructions} />
+      <TargetList targets={targets} open={activeTargetList} id={modalPlaces} />
+      {rendr && <GoogleMapComp 
          {...obj}
          location = {{lng: this.state.villainLng, lat: this.state.villainLat}}
-      />
-
+      />}
+       
       </div>
     );
   }

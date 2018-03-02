@@ -1,5 +1,5 @@
 export const ApiPath = "http://code-challenge.maplink.com.br/coordinate";
-export const GoogleAPIKey = "AIzaSyC3etoZazF31IqdI-CIIM18xPdpnWNND8w";
+export const GoogleAPIKey = "AIzaSyCSWdQQNI2QKO7Q9WOK2n6c39ygm63JNH8";
 export const GoogleConfig = "https://maps.googleapis.com/maps/api/js?&language=en&key="+GoogleAPIKey+"&libraries=geometry,drawing,places&units=metric";
 export const GothamBoundaries = () => {
     const boundaries = {
