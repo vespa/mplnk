@@ -2,7 +2,7 @@ import PersonMarker from "containers/GoogleMapComp"
 import { fetchedData, fetchedDataBatmobile, fetchedDataVillainLocation, updateTargets} from 'actions/index'
 import { connect } from 'react-redux';
 import { GothamBoundaries } from "config/Config"
-import GetData from 'helpers/GetData'
+import fetchData from 'helpers/fetchData'
 
 const mapStateToProps = (state) => {
   return {
@@ -17,20 +17,20 @@ const mapDispatchToProps = dispatch => {
   return {
     setBatmobilePosition: data => {
       dispatch(fetchedDataBatmobile(data));
-      return GetData(data).then(res => {
+      return fetchData.get(data).then(res => {
           dispatch(updateTargets(res.targets));
-          return data;
+          return res;
       }).catch(err => {
           alert(message);
       });
     },
     setVillainPosition: data => {
       dispatch(fetchedDataVillainLocation(data));
-      return GetData(data).then(res => {
+      return fetchData.get(data).then(res => {
           dispatch(updateTargets(res.targets));
-          return data;
+          return res;
       }).catch(err => {
-          alert(message);
+           alert(message);
       });
     }
   }

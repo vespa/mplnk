@@ -11,4 +11,12 @@ const GetData =  ({lat, lng}) =>{
 	});
 }
 
-export default GetData;
+function fetchData(){
+	return this;
+}
+fetchData.prototype.get = GetData;
+export default new fetchData();
+
+
+
+

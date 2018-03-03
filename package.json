@@ -20,8 +20,7 @@
     "collectCoverage": true,
     "collectCoverageFrom": [
       "**/src/js/components/**/**.{js,jsx}",
-      "**/src/js/containers/**/**.{js,jsx}",
-      "**/src/js/helpers/**/**.{js,jsx}"
+      "**/src/js/containers/**/**.{js,jsx}"
     ],
     "verbose": true,
     "moduleNameMapper": {

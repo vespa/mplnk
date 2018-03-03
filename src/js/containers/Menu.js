@@ -8,7 +8,7 @@ const mapStateToProps = (state) => {
      activeRoute: state.menu.activeRoute
   }
 }
-const mapDispatchToProps = (dispatch, state) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     createRoute: data => e => {
       e.preventDefault();

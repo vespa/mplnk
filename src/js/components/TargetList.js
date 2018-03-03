@@ -15,7 +15,12 @@ const TargetList =({ targets , id }) => {
 }
 
 TargetList.propTypes = {
-  targets: PropTypes.array.isRequired,
+  targets: PropTypes.arrayOf(
+    PropTypes.shape({
+      place: PropTypes.string.isRequired,
+      probability: PropTypes.number.isRequired
+    }).isRequired
+  ).isRequired,
   id:      PropTypes.string.isRequired,
 }
 export default TargetList;

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import GetData from 'helpers/GetData'
+import fetchData from 'helpers/fetchData'
 import GoogleMapComp from "containers/GoogleMapCompContainer"
 import Menu from "containers/Menu"
 import TargetList from 'components/TargetList';
@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   _call(){
-    GetData({lat: this.state.villainLat, lng: this.state.villainLng})
+    fetchData.get({lat: this.state.villainLat, lng: this.state.villainLng})
       .then(res => this._fetchData(res))
   }
   
